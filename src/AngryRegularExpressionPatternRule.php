@@ -133,7 +133,6 @@ final class AngryRegularExpressionPatternRule implements Rule
     private function validatePattern(string $pattern) : ?string
     {
         try {
-            Strings::match('', $pattern);
             $pregEntry = PregPatternTokenizer::tokenize($pattern);
             if ($this->regexHasUnfavorableMetaChar($pregEntry->getRegex())) {
                 return sprintf('Unfavorable `^` or `$` %s', $pattern);
